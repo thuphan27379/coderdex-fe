@@ -1,0 +1,129 @@
+Back-end: API Requirements
+
+Download and transform data as needed from kaggle
+
+You can take the csv file from this
+
+And high quality images from this dataset
+
+Transform data to the given form:
+
+{ "data": [
+               {
+                   "id": 1,
+                   "name": "bulbasaur",
+                   "types": [
+                       "grass",
+                       "poison"
+                   ],
+                   "url": "http://localhost:5000/images/1.png"
+               },...
+           ],
+           "totalPokemons": 721
+       }
+Note: The given CSV file contains the data of 809 pokemon. However, the images are about 721 png images. Your job is to cut off the Pokemon for which we don't have an image source.
+API for getting all Pokémons
+
+Search Pokémons by Type
+
+Search Pokémons by Name
+
+API for getting a single Pokémon information together with the previous and next pokemon information.
+
+/api/pokemons/2 return the pokemon with id 2, 1 and 3
+
+/api/pokemons/1 return the pokemon with id 1, 721 and 2
+
+/api/pokemons/721 return the pokemon with id 721, 720 and 1
+
+Example:
+
+the API /api/pokemons/25 will return:
+
+{
+      "pokemon": {
+        "name": "pikachu",
+        "types": [
+          "electric"
+        ],
+        "id": 25,
+        "url": "http://localhost:5000/images/25.png"
+      },
+      "previousPokemon": {
+        "name": "arbok",
+        "types": [
+          "poison"
+        ],
+        "id": 24,
+        "url": "http://localhost:5000/images/24.png"
+      },
+      "nextPokemon": {
+        "name": "raichu",
+        "types": [
+          "electric"
+        ],
+        "id": 26,
+        "url": "http://localhost:5000/images/26.png"
+      }
+    }
+API for creating new Pokémon (you can use the existing data set or faker. Handle error for the cases below:
+
+“Missing required data.” (name, id, types or URL)
+
+“Pokémon can only have one or two types.” (if the types's length is greater than 2)
+
+“Pokémon's type is invalid.” (if the types of Pokémon are not included in the valid given PokémonTypes array)
+
+“The Pokémon already exists.” (if id or name exists in the database)
+
+The valid type array:
+
+const pokemonTypes = [
+    "bug", "dragon", "fairy", "fire", "ghost", 
+    "ground", "normal", "psychic", "steel", "dark", 
+    "electric", "fighting", "flyingText", "grass", "ice", 
+    "poison", "rock", "water"
+    ]
+?? API for updating a Pokémon
+
+?? API for deleting a Pokémon by Id
+
+?? Expand the current database with generated data for:
+
+description
+height
+weight
+categpry
+abilities
+Example:
+
+    { 
+      "data": [
+                    {
+                        "id": 1,
+                        "name": "bulbasaur",
+                        "description": "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
+                        "height": "3'",
+                        "weight": "15.2. lbs",
+                        "category": "Seed",
+                        "abilities" "Overgrow",
+                        "types": [
+                            "grass",
+                            "poison"
+                        ],
+                        "url": "http://localhost:5000/images/1.png"
+                    },...
+                ],
+                "totalPokemons": 721
+            }
+
+Front-end: UI Requirements
+
+User sees all the Pokémons
+User sees a single detail page for a Pokémon
+User sees filter UI and can filter Pokémons with Type
+User sees search UI and can search Pokémons by Name
+?? User sees Infinite scroll (you can use this library
+For this assignment, you will be provided with a front-end codebase.
+
+Clone this repo for the front-end part. Make sure that the API from your back-end is the perfect match for the UI without changing anything in the front-end.
