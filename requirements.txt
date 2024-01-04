@@ -22,6 +22,7 @@ Transform data to the given form:
            "totalPokemons": 721
        }
 Note: The given CSV file contains the data of 809 pokemon. However, the images are about 721 png images. Your job is to cut off the Pokemon for which we don't have an image source.
+
 API for getting all Pokémons
 
 Search Pokémons by Type

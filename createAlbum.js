@@ -14,7 +14,14 @@ const data = {
       id: 1,
       name: "bulbasaur",
       types: ["grass", "poison"],
-      url: ".archiveimagesimagesabomasnow.png",
+      url: "./archive/images/images/abomasnow.png",
+      description: [],
+      height: [],
+      weight: [],
+      category: [],
+      abilities: [],
+      previousPokemon: [],
+      nextPokemon: [],
     },
   ],
   totalPokemons: 721,
@@ -37,11 +44,7 @@ const createAlbum = async () => {
 
   newData = Array.from(newData);
 
-  // remove duplicate data
   // console.log(newData);
-
-  // filter which no image url
-  //
 
   //
   let data = JSON.parse(fs.readFileSync("db.json"));
