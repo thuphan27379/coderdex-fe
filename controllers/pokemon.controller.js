@@ -1,13 +1,12 @@
 const crypto = require("crypto");
 
-// @route GET/pokemons
+// @route GET  /pokemons
 // @description - get all pokemons
 // @body (id, name, types, url)
 
 // dang lam //////
 const pokemonController = {};
 
-// get all pokemon
 pokemonController.getPokemons = catchAsync(async (req, res, next) => {
   //// get data from requests - nhan yeu cau
   const currentId = req.id;
@@ -28,27 +27,28 @@ pokemonController.getPokemons = catchAsync(async (req, res, next) => {
   );
 });
 
-// @route GET/pokemons?type="grass"
+// @route GET  /pokemons?type=grass
 // @description - search all pokemons with type = grass
 // @body (types)
 
-// @route GET/pokemons?name="bulbasaur"
+// @route GET  /pokemons?name=bulbasaur
 // @description - search all pokemons by name
 // @body (name)
 
-// @route GET/pokemons/:id
+// @route GET  /pokemons/:id
 // & return together with the previous and next pokemon
 // @description - get details of a pokemon (currentId), previousPokemon: currentId - 1, nextPokemon: currentId + 1
 // @body (id, name, types, url, description, ...)
 
-// @route POST/pokemons/:id
+// @route POST  /pokemons/:id
 // @description - create a new pokemon
 // @body (id, name, types, url, description, ...)
 
-// @route PUT/pokemons/:id
+// :rocket:
+// @route PUT  /pokemons/:id
 // @description - update a pokemon
 // @body (id, name, types, url)
 
-// @route DELETE/pokemons/:id
+// @route DELETE  /pokemons/:id
 // @description - delete a pokemon
 // @body (id)

@@ -14,11 +14,17 @@ const pokemonSchema = mongoose.Schema(
     types: {
       type: String,
       required: true,
+      maxLength: 2,
     },
     url: {
       type: String,
       required: true,
     },
+    description: { type: String },
+    height: { type: String },
+    weight: { type: String },
+    category: { type: String },
+    abilities: { type: String },
   },
   {
     timestamps: true,

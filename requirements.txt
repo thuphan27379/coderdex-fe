@@ -67,6 +67,7 @@ the API /api/pokemons/25 will return:
         "url": "http://localhost:5000/images/26.png"
       }
     }
+    
 API for creating new Pokémon (you can use the existing data set or faker. Handle error for the cases below:
 
 “Missing required data.” (name, id, types or URL)

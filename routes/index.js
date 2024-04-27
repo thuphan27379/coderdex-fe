@@ -6,7 +6,7 @@ router.get("/", function (req, res, next) {
   res.send("index");
 });
 
-// http://localhost:5000/api/pokemons
+// http://localhost:5000/pokemons
 
 const pokemonApi = require("./pokemon.api.js");
 router.use("/pokemons", pokemonApi);
