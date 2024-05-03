@@ -14,7 +14,7 @@ const data = {
       id: 1,
       name: "bulbasaur",
       types: ["grass", "poison"],
-      url: "./archive/images/images/abomasnow.png",
+      url: "/images/abomasnow.png",
       description: [],
       height: [],
       weight: [],
@@ -38,7 +38,7 @@ const createAlbum = async () => {
       types: e.Type2
         ? [e.Type1.toLowerCase(), e.Type2.toLowerCase()]
         : [e.Type1.toLowerCase()],
-      url: `./archive/images/images/${e.Name}.png`,
+      url: `/images/${e.Name}.png`,
     }))
   );
 
