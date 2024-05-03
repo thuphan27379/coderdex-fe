@@ -1,11 +1,17 @@
 # NodeJS and Express
 
 ## Pokédex
-In the pokemon world, there are hundreds of pokemon species. In this world, a trainer's best friend is the Pokedex - a pocket wiki about all pokemon where they could find, categorize, and search for a pokemon. 
+In the pokemon world, there are hundreds of pokemon species. In this world, a trainer's best friend is the Pokedex - a pocket wiki about all pokemon where they could find, categorize, and search for a pokemon.
 
 We are going to create a web application Pokedex that helps trainers around the world learn more about their favorite pokemon.
 
-![image alt](https://cdn.helpex.vn/upload/2020/09/13/05-00-00-000-a6d21e95-eed2-457c-b048-f74476ccbe29.jpg)
+![image alt](./public/images/pokdex.png)
+
+
+## Instruction
+- Change file `env.example` to `.env`. Then replace "YOUR API URL" to your `API`
+
+- run `npm install` then `npm start`
 
 ### Back-end: API Requirements
 
@@ -14,8 +20,8 @@ We are going to create a web application Pokedex that helps trainers around the 
     - And high quality images from this [set](https://www.kaggle.com/datasets/kvpratama/pokemon-images-dataset)
     - Transform data to the given form:
     - <details>
-        <summary><code>pokemons.json</code></summary> 
-    
+        <summary><code>pokemons.json</code></summary>
+
             { "data": [
                     {
                         "id": 1,
@@ -29,11 +35,11 @@ We are going to create a web application Pokedex that helps trainers around the 
                 ],
                 "totalPokemons": 721
             }
-        
+
     </details>
-        
+
     - Note: The given CSV file contains the data of 809 pokemon. However, the images are about 721 png images. Your job is to cut off the pokemon that we don't have an image source for.
-        
+
 - API for getting all Pokémons
     - Search Pokémons by Type
     - Search Pokémons by Name
@@ -41,9 +47,9 @@ We are going to create a web application Pokedex that helps trainers around the 
     - `/api/pokemons/2` return the pokemon with id `2`, `1` and `2`
     - `/api/pokemons/1` return the pokemon with id `1`, `721` and `2`
     - `/api/pokemons/721` return the pokemon with id `721`, `720` and `1`
-    - Example: 
-        <details><summary>the API <code>/api/pokemons/25</code> will return:</summary> 
-    
+    - Example:
+        <details><summary>the API <code>/api/pokemons/25</code> will return:</summary>
+
             {
               "pokemon": {
                 "name": "pikachu",
@@ -70,24 +76,24 @@ We are going to create a web application Pokedex that helps trainers around the 
                 "url": "http://localhost:5000/images/26.png"
               }
             }
-        
-    </details> 
-        
-    
+
+    </details>
+
+
 - API for creating new Pokémon (you can use the existing data set or [faker](https://fakerjs.dev/)). Handle error for the cases below:
     - "Missing required data." (`name`, `id`, `types` or `URL`)
     - "Pokémon can only have one or two types." (if the `types`'s length is greater than `2`)
     - "Pokémon's type is invalid." (if the types of Pokémon are not included in the valid given `PokémonTypes` array)
     - "The Pokémon is exist." (if `id` or `name` exists in the database)
 - :rocket:  API for updating a Pokémon
-- :rocket:  API for deleting a Pokémon by Id 
+- :rocket:  API for deleting a Pokémon by Id
 
 
 ```javascript=
 const pekemonTypes = [
-    "bug", "dragon", "fairy", "fire", "ghost", 
-    "ground", "normal", "psychic", "steel", "dark", 
-    "electric", "fighting", "flyingText", "grass", "ice", 
+    "bug", "dragon", "fairy", "fire", "ghost",
+    "ground", "normal", "psychic", "steel", "dark",
+    "electric", "fighting", "flyingText", "grass", "ice",
     "poison", "rock", "water"
 ]
 ```
@@ -100,7 +106,7 @@ const pekemonTypes = [
 **For this assignment, you will be provided with a front-end codebase. But feel free to make your own and create your first full-stack web.*
 ## Marking Guide
 ### Demo
-Have a look at the [demo]() website
+Have a look at the [demo](https://coderdex-cs-fe.vercel.app) website
 
 ### Marking Guide
 Everyone will start at 100 scores.
@@ -112,5 +118,5 @@ Everyone will start at 100 scores.
 
 This assignment's minimum pass score is 80/100
 
---- 
+---
 **Good luck have fun!**
